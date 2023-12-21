@@ -20,3 +20,252 @@ li,
 figure {
   margin: 0;
 }
+
+:root {
+  --bg-color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffab6b;
+  --main-font: Raleway;
+  --accent-font: STIX Two Text;
+}
+
+.page {
+  background-color: var(--bg-color, #f3efec);
+  color: var(--text-color, #312a4e);
+  font-family: var(--main-font, sans-serif);
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #b3b3b3;
+  --accent-color: transparent;
+}
+
+.header {
+  padding-top: 10%;
+}
+
+.heading {
+  font-family: var(--accent-font, serif);
+  line-height: 0.9;
+  font-weight: 600;
+  text-align: center;
+}
+
+.content-section {
+  padding: 0 5vi;
+}
+
+.header__title {
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+  padding-bottom: 40px;
+}
+
+.content__title {
+  font-size: 30px;
+  margin-top: 7%;
+  margin-bottom: 2.5%;
+}
+
+.content__text-block {
+  display: grid;
+  font-size: 18px;
+}
+
+.content__text-block .content__paragraph:not(:last-of-type) {
+  margin-bottom: 1.5em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.content__blockquote {
+  width: 75%;
+  font-style: italic;
+  line-height: 200%;
+  padding-bottom: 1.5em;
+  justify-self: center;
+}
+
+.content__list {
+  list-style: none;
+  padding-left: 40px;
+}
+
+.content__list-item {
+  position: relative;
+}
+
+.content__list-item:not(:last-of-type) {
+  padding-bottom: 10px;
+}
+
+.content__list-item::before {
+  position: absolute;
+  top: 4px;
+  left: -26px;
+  display: inline-block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/marker-light.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.theme_dark .content__list-item::before {
+  background-image: url(../images/marker-dark.svg);
+}
+
+.content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+  display: inline-block;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-right: 1px;
+  background-color: var(--accent-color);
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.theme_dark .content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+  border: 1px solid currentColor;
+}
+
+.content__figure {
+  margin: 7% 0;
+  width: calc(100% + 10vi);
+  position: relative;
+  right: 5vi;
+}
+
+.content__picture {
+  display: block;
+  width: 100%;
+}
+
+.content__picture-caption {
+  text-align: center;
+  padding: 21px 0;
+  border-bottom: 1px solid currentColor;
+  font-size: 18px;
+}
+
+.content__card-title {
+  font-size: 60px;
+  position: relative;
+}
+
+.colored-text::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  right: -6px;
+  z-index: -1;
+  width: 54%;
+  height: 0.25em;
+  background-color: var(--accent-color);
+}
+
+.theme_dark .colored-text::after {
+  background-image: url(../images/pattern.svg);
+}
+
+.content__card-subtitle {
+  font-size: 18px;
+  text-align: center;
+}
+
+.content__card {
+  aspect-ratio: 4/3;
+  margin-top: 7%;
+  border: 1px solid currentColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header__theme-toggler {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.header__theme-button {
+  font-family: inherit;
+  font-size: inherit;
+  border: 0;
+  color: currentColor;
+  background-color: transparent;
+  height: 100%;
+}
+
+.header__theme-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header__theme-button_is-active {
+  font-weight: 700;
+}
+
+.header__theme-button_is-active {
+  position: relative;
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  right: -4px;
+  z-index: -1;
+  width: 105%;
+  height: 0.3em;
+  background-color: var(--accent-color);
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url(../images/pattern.svg);
+}
+
+button:focus {
+  outline: 0;
+}
+
+a:focus {
+  outline: 0;
+}
+
+button:focus-visible {
+  outline: 1px solid currentColor;
+  pointer-events: none;
+}
+
+a:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.footer {
+  border-top: 1px solid currentColor;
+  margin-top: 10%;
+  padding: 2.5%;
+}
+
+.footer__copyright {
+  text-align: center;
+  font-size: 18px;
+}
